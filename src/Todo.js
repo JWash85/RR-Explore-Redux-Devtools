@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addTodo, removeOne, clearTodo } from './features/todoSlice'
 
+
 function Todo() {
     const items = useSelector((state) => state.todos.items)
     const dispatch = useDispatch()
     const [input, setInput] = useState('')
 
-    const renderItems = items.map((item, index) => <li key={index} onClick={() => dispatch(removeOne(index))}>{item}</li>)
+    const renderItems = items.map((item, i) => <li key={i} onClick={() => dispatch(removeOne(i))}>{item}</li>)
 
     const submitForm = (e) => {
         e.preventDefault()

@@ -20,12 +20,12 @@ export const todoSlice = createSlice({
                 return { items: array }
             }
         },
-        cleartodo: () => {
-            return { todo: [] }
+        clearTodo: () => {
+            return {items: []} 
         }
     }
 })
-
+//Exporting action to todoSlice.actions
 export const { addTodo, removeOne, clearTodo } = todoSlice.actions
-
+//Exporting component as default component
 export default todoSlice.reducer
